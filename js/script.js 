@@ -1,50 +1,40 @@
 function initMap() {
     var map;
-    var csLatLang = new google.maps.LatLng(41.83863002472576, -87.6270380886158);
-    var parkingLatLng = new google.maps.LatLng(41.838566078590155, -87.62616905289498)
-    var parkingSpot2LatLang = new google.maps.LatLng(41.83747898404313, -87.62616905289498)
-    var infoLatLang = new google.maps.LatLng(41.83855433094542, -87.6273903853663);
-    var scienceLatLang = new google.maps.LatLng(41.83792661341855, -87.62704881745186)
+    var highschoolLatLang = new google.maps.LatLng(37.828357, -122.004382);
+    var DiabloLatLang = new google.maps.LatLng(37.837563, -121.967060);
+    var ParkLatLang = new google.maps.LatLng(37.819139, -121.944978)
     const contentString =
-        '<h1>CS Department</h1>' +
+        '<h1>highschool</h1>' +
         'This is where I go to most days' +
-        'This is the CS department. I have most of my CS classes here';
-    const scienceString =
-        '<h1>Science Department</h1>' +
+        'This is the san ramon highschool. ';
+    const DiabloString =
+        '<h1>mountdiablo</h1>' +
         'This is where I sometimes go. ' +
-        'Sometimes I have CS courses in this building';
+        'Sometimes I have hiking in this mountain';
     const infowindow = new google.maps.InfoWindow({
-        content: contentString,
+        content: highschoolLatLang,
     });
     const scienceInfo = new google.maps.InfoWindow({
-        content: scienceString,
+        content: ParkLatLang,
     });
     var image =
         "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
 
     map = new google.maps.Map(document.getElementById("map"), {
-        center: csLatLang,
+        center: highschoolLatLang,
         zoom: 18,
     });
     var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
     var marker = new google.maps.Marker({
-        position: parkingLatLng,
+        position: ParkLatLang,
         map: map,
-        icon: iconBase + 'parking_lot_maps.png',
+        icon: iconBase + 'ParkLatLang.png',
         animation: google.maps.Animation.BOUNCE,
-        title: "This is a parking spot",
-    });
-
-    var marker_parking = new google.maps.Marker({
-        position: parkingSpot2LatLang,
-        map: map,
-        icon: iconBase + 'parking_lot_maps.png',
-        animation: google.maps.Animation.BOUNCE,
-        title: "This is a parking spot",
+        title: "This is a beautiful Park",
     });
 
     new google.maps.Marker({
-        position: csLatLang,
+        position: highschoolLatLang,
         map: map,
         title: "Drag Me!",
         icon: image,
@@ -52,15 +42,15 @@ function initMap() {
     });
 
     const marker_two = new google.maps.Marker({
-        position: infoLatLang,
+        position: DiabloLatLang,
         map,
-        title: "Copmuter Science Department",
+        title: "mountdiablo",
     });
 
     const scienceMarker = new google.maps.Marker({
-        position: scienceLatLang,
+        position: ParkLatLang,
         map,
-        title: "Science Deparment",
+        title: "Sycanore valley Park",
     });
 
     marker_two.addListener("click", () => {
@@ -70,16 +60,6 @@ function initMap() {
             shouldFocus: false,
         });
     });
-
-    scienceMarker.addListener("click", () => {
-        scienceInfo.open({
-            anchor: scienceMarker,
-            map,
-            shouldFocus: false,
-        });
-    });
-
-
 }
 
 window.addEventListener('load', initMap)
