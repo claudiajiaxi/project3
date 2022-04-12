@@ -1,65 +1,71 @@
-function initMap() {
-    var map;
-    var highschoolLatLang = new google.maps.LatLng(37.828357, -122.004382);
-    var DiabloLatLang = new google.maps.LatLng(37.837563, -121.967060);
-    var ParkLatLang = new google.maps.LatLng(37.819139, -121.944978)
-    const contentString =
-        '<h1>highschool</h1>' +
-        'This is where I go to most days' +
-        'This is the san ramon highschool. ';
-    const DiabloString =
-        '<h1>mountdiablo</h1>' +
-        'This is where I sometimes go. ' +
-        'Sometimes I have hiking in this mountain';
-    const infowindow = new google.maps.InfoWindow({
-        content: highschoolLatLang,
-    });
-    const scienceInfo = new google.maps.InfoWindow({
-        content: ParkLatLang,
-    });
-    var image =
-        "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+function mapInit(){
+  var PathData  = [
+    [37.828357, 122.004282],
+    [37.837563, 121.967060],
+    [37.819139, 121.944978],
+  ];
+  var mapobj = document.getElementById('googleMap');
+  var danville = new google.maps.LatLng(37.837563, 121.96706);
+  var mapOptions = {
+    zoom:10,
+    center:danville,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
 
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: highschoolLatLang,
-        zoom: 18,
-    });
-    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-    var marker = new google.maps.Marker({
-        position: ParkLatLang,
-        map: map,
-        icon: iconBase + 'ParkLatLang.png',
-        animation: google.maps.Animation.BOUNCE,
-        title: "This is a beautiful Park",
-    });
+  };
+  var myMap =new google.maps.Map(mapobj,mapOptions);
 
-    new google.maps.Marker({
-        position: highschoolLatLang,
-        map: map,
-        title: "Drag Me!",
-        icon: image,
-        draggable: true,
-    });
+  var marker = new google.maps.Marker({
+    title:"danville",
+    position:danville,
+    map:myMap,
+    draggable:true,
+    animation: null,
 
-    const marker_two = new google.maps.Marker({
-        position: DiabloLatLang,
-        map,
-        title: "mountdiablo",
+  });
+  var alertBody = "danville" ;
+  var infowindow = new google.maps.InfoWindow({
+    content:alertBody,
+  });
+  marker.addListener("click",() => {
+    marker.getAnimation() !==null?marker.setAnimation(null):marker.setAnimation(google.maps.Animation.BOUNCE);
+    infowindow.open({
+      map:myMap,
+      anchor:marker
     });
+  });
 
-    const scienceMarker = new google.maps.Marker({
-        position: ParkLatLang,
-        map,
-        title: "Sycanore valley Park",
-    });
 
-    marker_two.addListener("click", () => {
-        infowindow.open({
-            anchor: marker_two,
-            map,
-            shouldFocus: false,
-        });
-    });
+
+
+
+  var path = [];
+  var bounds = new google.maps.LatLngBounds();
+  var center={lat:37.837563, lng:121.96706};
+  console.log(center);
+  bounds.extend(center);
+  for (var i in PathData)
+  {
+      var p = PathData[i];
+      var latlng = new google.maps.LatLng(p[0], p[1]);
+      console.log(latlng);
+      path.push(latlng);
+      bounds.extend(latlng);
+  }
+  var poly = new google.maps.Polygon({
+      paths: path,
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 3,
+      fillColor: '#FF0000',
+      fillOpacity: 0.1
+  });
+  poly.setMap(myMap);
+
+
+  myMap.fitBounds(bounds);
+
 }
 
-window.addEventListener('load', initMap)
+
+
+google.maps.event.addDomListener(window, 'load', mapInit);
