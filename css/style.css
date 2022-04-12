@@ -1,0 +1,210 @@
+/*code for all pages*/
+header {
+  background-color: rgb(230, 243, 250);
+  padding: 6% 20% 6% 6%;
+  margin-left: 0px !important;
+  margin-bottom: 2em;
+  border-bottom: 1px solid rgb(0, 130, 43);
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-size: 5em;
+  color: rgb(80, 130, 0);
+}
+
+nav#mainnav li {
+  float: left;
+  width: 32.75%;
+  margin: .5% .25% .5% .25%;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-size: 2em;
+  color: rgb(63, 130, 0);
+  text-align: center;
+}
+
+#resume, #education, #pet, #hike, #mountdiablo {
+  padding: 2% 20% 2% 20%;
+}
+
+  nav#mainnav ul li a {
+  text-decoration: none;
+  color: rgb(15, 130, 0);
+  padding: 1em;
+  display: block;
+  background-color: rgb(230, 249, 250);
+  border: 1px solid rgb(230, 241, 250);
+}
+
+nav#mainnav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  background-color: white;
+}
+
+nav#mainnav ul li a:hover {
+  background-color: rgb(69, 130, 0);
+  border: 1px solid rgb(85, 130, 0);
+  color: rgb(230, 247, 250);
+}
+
+
+h3 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 2em;
+  text-align: center;
+}
+
+p {
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  line-height: 2em;
+  margin-bottom: 1em;
+}
+
+ul {
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  line-height: 2em;
+  margin-bottom: 2em;
+}
+
+ol {
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  line-height: 2em;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 768px) {
+header {
+  background-color: rgb(239, 250, 230);
+  padding: 2% 6% 2% 6%;
+  margin-left: 0px !important;
+  margin-bottom: 4%;
+  margin-top: .25%;
+  border-bottom: 1px solid indigo;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-size: 3em;
+  color: rgb(74, 130, 0);
+  text-align: center;
+}
+
+nav#mainnav li {
+  float: left;
+  width: 100%;
+  margin: .25%;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  font-size: 1.4em;
+  color: rgb(74, 130, 0);
+}
+
+#resume, #education, #pet, #hike, #mountdiablo {
+  padding: 2% 6% 2% 6%;
+}
+
+  nav#mainnav ul li a {
+  text-decoration: none;
+  color: rgb(69, 130, 0);
+  padding: 1em;
+  display: block;
+  background-color: rgb(230, 250, 248);
+  border: 1px solid rgb(230, 250, 238);
+}
+}
+
+
+/*code for resume page only*/
+button#linkedin-link {
+  color: rgb(63, 130, 0);
+  text-decoration: none;
+  padding: 1em;
+  border-radius: 3em;
+  border: 1px solid rgb(91, 130, 0);
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  background-color: rgb(230, 247, 250) !important;
+  margin: 3% 0% 0% 0%;
+}
+
+button#facebook-link:hover {
+  border: 1px solid rgb(63, 130, 0);
+  background-color: rgb(85, 130, 0) !important;
+  color: lavender;
+}
+
+@media (max-width: 768px) {
+  button#facebook-link {
+  margin: 6% 0% 10% 0%;
+}
+}
+
+/*code for pet page only*/
+.picture {
+  background-color: #CCFF99;
+  text-align: center;
+  border: 5px solid;
+  border-radius: 20px;
+  border-color: #F6FFCF;
+  width: 400px;
+  height: 360px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+
+/*code for hike page only*/
+#diablo-pic {
+  width: 100%;
+  border-top: 50px solid darkcyan;
+  border-bottom: 10px solid darkcyan;
+}
+
+#diablo-video-container {
+  background-color: lightcyan;
+  padding: 8% 1% 8% 1%;
+  text-align: center;
+}
+
+#diablo-video-container h2 {
+  color: darkcyan;
+  text-align: center;
+}
+
+#diablo-video {
+  width: 80% !important;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  #diablo-video {
+  width: 95% !important;
+}
+}
