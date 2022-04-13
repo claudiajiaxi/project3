@@ -261,21 +261,21 @@ body {
     bottom: 50%;
 }
 
-#locations-panel {
- top: 50%;
- right: 0;
- width: unset;
-}
+  #locations-panel {
+    top: 50%;
+    right: 0;
+    width: unset;
+   }
 }
 
 #locations-panel-list > header {
-padding: 1.4em 1.4em 0 1.4em;
+  padding: 1.4em 1.4em 0 1.4em;
 }
 
 #locations-panel-list h1.search-title {
-font-size: 1em;
-font-weight: 500;
-margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0;
 }
 
 #locations-panel-list h1.search-title > img {
@@ -330,14 +330,14 @@ margin-top: -1em;
 }
 
 #locations-panel-list .location-result {
-position: relative;
-padding: 0.8em 3.5em 0.8em 1.4em;
-border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-cursor: pointer;
+  position: relative;
+  padding: 0.8em 3.5em 0.8em 1.4em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  cursor: pointer;
 }
 
 #locations-panel-list .location-result:first-of-type {
-border-top: 1px solid rgba(0, 0, 0, 0.12);
+ border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 #locations-panel-list .location-result:last-of-type {
@@ -345,7 +345,7 @@ border-bottom: none;
 }
 
 #locations-panel-list .location-result.selected {
-outline: 2px solid #4285f4;
+ outline: 2px solid #4285f4;
 }
 
 #locations-panel-list button.select-location {
